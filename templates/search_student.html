@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link href="../static/bootstrap.min.css" rel="stylesheet" media="screen" >
+    <title>Search Student</title>
+    <style type="text/css">
+        h1,h2{
+            color: red;
+            font-family:"Book Antiqua";
+            text-align: center;
+        }
+        a{
+            color: white;
+            background-color:red;
+            font-family: Arial;
+            padding: 0.8%;
+            align-content: center;
+        }
+
+        a:hover{
+            background-color:orangered;
+        }
+
+        body{
+            text-align: center;
+        }
+        h4{
+            color: red;
+            font-family: "Arial Rounded MT Bold";
+        }
+
+        h3{
+            color: red;
+            font-family: "Bodoni MT Black";
+        }
+    </style>
+</head>
+<body>
+
+<div>
+<h1> GOOD FAITH Boarding Academy</h1>
+<h2>"We Strive for Excellence"</h2>
+    </div>
+
+<hr>
+<a href="/student">Register Student</a>/
+<a href="/sstudents">Search Student</a>/
+<a href="/payments">Add Payment</a>/
+<a href="/spayments">Search Payment</a>/
+<a href="/marks">Add Marks</a>/
+<a href="/smarks">Search Marks </a>/
+<a href="/graph">Graphical Representation</a>/
+<br><br><br>
+
+<form action="/sstudents" method="post">
+    <input type="number" name="regno"
+    placeholder = "Enter Registration No.">
+    <br>
+    <h4>{{ msg }}</h4>
+    <h4>{{ msg1 }}</h4>
+    <input type="submit" value="Search Student">
+
+</form>
+
+<h3> Student Details</h3>
+<center>
+    <table border="1" width="80%">
+        {% for row in results %}{#meaning for every row in tblstudents#}
+
+       <tr>
+           <td>REG NO.</td>
+           <td>SURNAME</td>
+           <td>NAME</td>
+           <td>OTHER</td>
+           <td>DATE OF BIRTH</td>
+           <td>GENDER</td>
+           <td>CLASS</td>
+       </tr>
+
+        <tr>
+             <td>{{ row [0] }}</td>
+             <td>{{ row [1] }}</td>
+             <td>{{ row [2] }}</td>
+             <td>{{ row [3] }}</td>
+             <td>{{ row [4] }}</td>
+             <td>{{ row [5] }}</td>
+             <td>{{ row [6] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../bootstrap.min.css" rel="stylesheet" media="screen" >
+    <title>LOGIN PAGE</title>
+    <style type="text/css">
+        h2{
+            color: red;
+            font-family:"Book Antiqua";
+            text-align: center;
+        }
+        </style>
+</head>
+<body>
+<div class="container">
+    <h1>Please Login </h1> <br>
+    <form action="/" method="post">
+        <input type="text" placeholder="Username" name="username" value="{{ request.form.username }}"><br><br>
+        <input type="password" placeholder="Password" name="password" value="{{ request.form.password }}"><br><br>
+        <input class="btn btn-default" type="submit" value="Login">
+    </form><br><br><br>
+    {% if error %}
+
+        <h2><p class = 'error'><strong>Error:  </strong> {{ error }}</p></h2>
+
+    {% endif %}
+</div>
+<p><center> Don't have an Account?</center></p><br>
+<center><p> Click <a href="/"> HERE</a> to Register as a User </p></center>
+</body>
+</html>

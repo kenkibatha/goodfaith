@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link href="../static/bootstrap.min.css" rel="stylesheet" media="screen" >
+    <title>Payments</title>
+    <style type="text/css">
+        h1,h2{
+            color:red;
+            font-family:"Book Antiqua";
+            text-align: center;
+        }
+        a{
+            color: white;
+            background-color:red;
+            font-family: Arial;
+            padding: 0.8%;
+            align-content: center;
+        }
+
+        a:hover{
+             background-color:orangered;
+        }
+
+        body{
+            text-align: center;
+        }
+        h4{
+            color: red;
+            font-family: "Arial Rounded MT Bold";
+        }
+
+        h3{
+            color: green;
+            font-family: "Bodoni MT Black";
+        }
+    </style>
+</head>
+<body>
+
+<div>
+<h1> GOOD FAITH Boarding Academy</h1>
+<h2>"We Strive for Excellence"</h2>
+    </div>
+
+<hr>
+<a href="/student">Register Student</a>/
+<a href="/sstudents">Search Student</a>/
+<a href="/payments">Add Payment</a>/
+<a href="/spayments">Search Payment</a>/
+<a href="/marks">Add Marks</a>/
+<a href="/smarks">Search Marks </a>/
+<a href="/graph">Graphical Representation</a>/
+<br><br>
+
+<form action="/payments" method="post">
+    <input type="number" name="regno"
+    placeholder = "Enter Registration No.">
+    <br>
+    <h4>{{ msg }}</h4>
+
+    <input type="number" name="amount"
+    placeholder = "Enter Amount in Ksh">
+    <br><br>
+
+    <input type="submit" value="Add Payment">
+
+</form>
+   <h3>{{ msg1 }}</h3>
+
+
+</body>
+</html>
